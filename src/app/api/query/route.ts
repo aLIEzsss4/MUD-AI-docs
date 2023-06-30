@@ -7,6 +7,7 @@ import { Document } from 'langchain/document'
 import { StreamingTextResponse, LangChainStream, Message } from 'ai'
 import { AIChatMessage, HumanChatMessage } from 'langchain/schema'
 import { ChatOpenAI } from 'langchain/chat_models/openai'
+import { kv } from "@vercel/kv";
 
 
 export async function POST(req: NextRequest) {
@@ -23,7 +24,7 @@ export async function POST(req: NextRequest) {
   const queryEmbedding = await new OpenAIEmbeddings().embedQuery(body)
   let queryResponse = await index.query({
     queryRequest: {
-      topK: 10,
+      topK: 5,
       vector: queryEmbedding,
       includeMetadata: true,
       includeValues: true,
