@@ -41,12 +41,8 @@ export default function Messages({ messages, isLoading }: MessagesProps) {
             <a href="/mud" target="_blank" className="ml-2 mr-2 h-auto p-0 text-mud">MUD</a>documents
 
           </p>
-          {/* <p className="leading-normal text-muted-foreground">
-            You can start a conversation here or try the following examples:
-          </p> */}
-
           {messages?.map(message => (
-            <Message message={message}  />
+            <Message key={message.content} message={message}  />
           )
           )}
           {isLoading && <IconSpinner />}
