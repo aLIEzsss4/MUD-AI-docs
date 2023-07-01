@@ -68,6 +68,7 @@ export default function PromptForm({
             type="submit"
             size="icon"
             disabled={isLoading || input === ''}
+            onClick={()=>onSubmit(input)}
           >
             <IconArrowElbow />
             <span className="sr-only">Ask MUD AI</span>
