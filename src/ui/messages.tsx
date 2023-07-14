@@ -37,9 +37,7 @@ export default function Messages({ messages, isLoading }: MessagesProps) {
             AI Docs!
           </h1>
           <p className="mb-4 leading-normal text-muted-foreground">
-            The data is from
-            <a href="/mud" target="_blank" className="ml-2 mr-2 h-auto p-0 text-mud">MUD</a>documents
-
+            Ask me questions about MUD and I will answer you like ChatGPT.
           </p>
           {messages?.map(message => (
             <Message key={message.content} message={message}  />
