@@ -18,9 +18,8 @@ export function useQAlangchain() {
     setResult(result => [...result, { role: 'user', content: input }])
     setLoading(true)
     try {
-      const result = await fetch('/api/query', {
-        method: "POST",
-        body: JSON.stringify(input)
+      const result = await fetch(`${process.env.NEXT_PUBLIC_SEVER_URL}/api?query=${JSON.stringify(input)}`, {
+        method: "GET",
       })
       const json = await result.json()
       setResult(result => [...result, { role: 'system', content: json.data }])
