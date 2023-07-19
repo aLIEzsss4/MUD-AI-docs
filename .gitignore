@@ -27,6 +27,10 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# server
+/package/server/.env
+/package/server/node_modules
+
 # vercel
 .vercel
 
