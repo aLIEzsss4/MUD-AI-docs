@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 require('dotenv').config()
+
 
 const { PineconeClient } = require('@pinecone-database/pinecone');
 
@@ -11,6 +13,9 @@ const { loadQAStuffChain } = require('langchain/chains');
 const { Document } = require('langchain/document');
 
 const { ChatOpenAI } = require('langchain/chat_models/openai');
+
+
+app.use(cors());
 
 
 let index = ''
