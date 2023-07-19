@@ -27,11 +27,14 @@ const init = async () => {
 }
 
 
-
-
-
-
 app.get('/', async (req, res) => {
+  res.send('ok!')
+})
+
+
+
+
+app.get('/query', async (req, res) => {
 
 
 
