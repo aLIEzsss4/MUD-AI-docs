@@ -93,8 +93,8 @@ app.get('/', async (req, res) => {
 
 });
 
-app.listen(process.env.POOT, () => {
-  console.log(`App listening on port ${process.env.POOT}!`);
+app.listen(process.env.PORT, () => {
+  console.log(`App listening on port ${process.env.PORT}!`);
 
   init()
 
